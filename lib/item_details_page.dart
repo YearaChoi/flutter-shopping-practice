@@ -1,4 +1,5 @@
 import 'package:f/constants.dart';
+import 'package:f/item_basket_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:f/models/product.dart';
@@ -77,7 +78,12 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20),
         child: FilledButton(
-          onPressed: () {},
+          onPressed: () {
+            // 추후 장바구니 담는 로직 추가 예정
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              return const ItemBasketPage();
+            }));
+          },
           child: const Text("장바구니 담기"),
         ),
       ),
